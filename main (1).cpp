@@ -36,5 +36,7 @@ int main()
 
     std::cout << "Atlag: " << atlag << std::endl;
 
+    std::cout << "Itt járt Máté." << std::endl;
+
     return 0;
 }
