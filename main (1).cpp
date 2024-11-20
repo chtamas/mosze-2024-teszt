@@ -1,39 +1,36 @@
-#include <iostream> 
+ #include <iostream>
 
 constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS];
-    //Az 'NELEMENTS' helytelen név. A konstans neve helyesen 'N_ELEMENTS'.
-
-    std::cout << '1-100 ertekek duplazasa';
-    //A stringeket dupla idézőjel (" ") között kell megadni.
-
-    for (int i = 0;)
+    //int *b = new int[NELEMENTS];
+    int* b = new int[N_ELEMENTS];
+    //std::cout << '1-100 ertekek duplazasa'
+    std::cout << "1-100 ertekek duplazasa";
+     // for (int i = 0;)
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        b[i] = i * 2;
+        b[i] = (i+1) * 2;
     }
-    //A for ciklus feltétele helytelen. A második paraméter hiányzik. 
 
-    for (int i = 0; i; i++)
+    // for (int i = 0; i; i++)
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:";
+        //std::cout << "Ertek:"
+        std::cout << "Ertek:" << b[i]<<"\n";
     }
-    //A ciklus feltétele mindig hamis (i = 0 és a feltétel i nem változik, tehát a ciklus nem fut le).
-    //A std::cout sor végén hiányzik a pontosvessző (;).
-
+    
     std::cout << "Atlag szamitasa: " << std::endl;
+    //int atlag;
+    int atlag=0;
 
-    int atlag;
-    //Az 'atlag' változó nem inicializált, így használat előtt definiálni kell.
-
-    for (int i = 0; i < N_ELEMENTS, i++)
+    //for (int i = 0; i < N_ELEMENTS, i++)
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
+        //atlag += b[i]
         atlag += b[i];
     }
-    //A for ciklus feltételében vessző (,) van a feltételek elválasztására, ami helytelen. 
-    //A 'atlag += b[i]' sor végén hiányzik a pontosvessző (;).
 
     atlag /= N_ELEMENTS;
 
